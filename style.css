@@ -1,9 +1,13 @@
-/* 전체 페이지 스타일 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
 * {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400 !important;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -16,9 +20,8 @@ body {
   padding: 0;
 }
 
-/* 머리글 스타일 */
 header {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   padding: 20px;
 }
@@ -52,12 +55,10 @@ nav ul li a:hover {
   color: #fff !important;
 }
 
-/* 본문 스타일 */
 main {
   padding: 20px;
   margin: 20px;
-  background-color: #eee;
-  border: 1px solid #000;
+  background-color: #fff;
 }
 
 h2 {
@@ -74,41 +75,31 @@ li {
   margin-bottom: 10px;
 }
 
-/* 바닥글 스타일 */
 footer {
-  background-color: #333;
+  background-color: #000;
   color: #fff;
   text-align: center;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
 }
 
 .img-div {
-  /* width: 100vw; */
   align-items: center;
   justify-content: center;
   text-align: center;
   size: 100px;
 }
 
-.main-img {
-  width: 100vw;
-  margin-top: 20px;
-}
-
-.main-text {
-  padding: 5px 10px;
-  background-color: yellow;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .main-wrap {
   width: 100%;
   margin: 10px auto;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   position: relative;
 }
 
@@ -117,51 +108,57 @@ footer {
   vertical-align: middle;
 }
 
-.main-text-wrap {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #ffeebc;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .sdl-calendar {
   width: 75vw;
   margin-top: 20px;
-  border: #000000 1px solid;
+  border: #000 1px solid;
 }
+
 .month-info {
   display: flex;
   flex-direction: row;
   white-space: nowrap;
 }
-.month-selection {
+
+main div div a {
   margin-right: 10px;
   cursor: pointer;
+  color: grey;
 }
-.email {
-  color: #c5221f;
+main div div a:hover {
+  color: #000 !important;
 }
+
+footer i {
+  margin: 10px;
+  font-size: 150%;
+
+  display: flex;
+  cursor: pointer;
+}
+
 #class-main {
   height: 100px;
   cursor: pointer;
 }
+
 .ot-img {
   width: 200px;
   float: left;
   border-radius: 10px;
   border: #000 1px solid;
 }
+
 .ot-class {
   flex-direction: row;
   white-space: nowrap;
   cursor: pointer;
 }
+
 .ot-h4 {
   margin-top: -5px;
 }
+
 #back {
   position: absolute;
   top: 0;
@@ -169,4 +166,55 @@ footer {
   margin: 20px;
   cursor: pointer;
   font-size: 40px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  footer {
+    color: #fff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    background: #121212 !important;
+  }
+  hr {
+    color: #fff;
+  }
+  body {
+    background: #121212;
+    color: #fff;
+  }
+  #class-main {
+    background: #121212;
+  }
+  footer {
+    color: #fff;
+    background: #121212 !important;
+  }
+  svg {
+    color: #fff !important;
+  }
+}
+@media (max-width: 375px) {
+  footer {
+    width: 47.8vh !important;
+  }
+  header {
+    width: 45vh !important;
+  }
+  hr {
+    width: 50vh;
+  }
+  main {
+    width: 41vh;
+  }
+}
+@media (max-width: 1440px) {
+  svg {
+    width: 2vh !important;
+  }
 }
